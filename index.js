@@ -1,20 +1,13 @@
 var app = require('express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
+var xml = require('xml');
+var sample=[ { toys: [ { toy: 'Transformers' } , { toy: 'GI Joe' }, { toy: 'He-man' } ] } ];
 app.get('/', function(req, res){
-  res.sendFile(__dirname+'/index.html');
-});
+  res.set('Content-Type', 'text/xml');
+  console.log(sample);
+  console.log(xml(sample));
+  res.send(xml(sample));
 
-io.on('connection',function(socket){
-  console.log('A user Connected');
-  socket.on('disconnect',function(){
-    console.log('User Disconnected');
-  });
-  socket.on('chat message',function(msg){
-    console.log('message: '+ msg);
-    io.emit('chat message', msg);
-  });
 });
 
 http.listen(3000, function(){

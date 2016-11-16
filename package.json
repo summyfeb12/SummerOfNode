@@ -1,9 +1,25 @@
 {
-  "name": "socket_demo",
+  "name": "hell",
   "version": "0.0.1",
   "description": "Simple chat application.",
   "dependencies": {
     "express": "^4.10.2",
-    "socket.io": "^1.4.6"
-  }
+    "socket.io": "^1.4.6",
+    "xml": "^1.0.1"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summyfeb12/SummerOfNode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/summyfeb12/SummerOfNode/issues"
+  },
+  "homepage": "https://github.com/summyfeb12/SummerOfNode#readme"
 }
